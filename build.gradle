@@ -1,0 +1,28 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.6.RELEASE'
+	id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.beacon'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+dependencies {
+	//CLOUD START DATA STORE DEPENECIES STARTED HERE
+	compile 'com.google.cloud:google-cloud-core:1.57.0'
+	compile 'com.google.cloud:google-cloud-core-http:1.57.0'
+	compile 'com.google.cloud:google-cloud-datastore:1.57.0'
+	 compile group: 'org.eclipse.persistence', name: 'javax.persistence', version: '2.0.0' 
+	//CLOUD END	
+}
